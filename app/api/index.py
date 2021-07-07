@@ -13,7 +13,7 @@ modelos.Base.metadata.create_all(bind=engine)
 router = APIRouter()
 
 
-@router.get("/")
+@router.get("/", tags=['root'])
 def root():
     return RedirectResponse(url="/docs/")
 

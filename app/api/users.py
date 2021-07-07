@@ -24,12 +24,12 @@ def get_db():
         db.close()
 
 
-@router.get("/list-users",response_model=List[schema.User])
+@router.get("/list-users",response_model=List[schema.User],tags=['user/list-users'])
 def list(db:Session= Depends(get_db)):
     users = users_crud.list_users(db)
     return users
 
-@router.post("/users/", response_model=schema.User)
+@router.post("/register", response_model=schema.User, tags=['user/register'])
 def create_user(user: schema.UserCreate, db: Session = Depends(get_db)):
     db_person = persons_crud.get_person_by_identification(db,identification=user.identification)
     if db_person:

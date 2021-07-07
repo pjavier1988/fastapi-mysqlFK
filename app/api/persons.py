@@ -36,24 +36,7 @@ def create_user(person: schema.PersonCreate, db: Session = Depends(get_db)):
     if db_person:
         raise HTTPException(status_code=400,detail="Identificación ya registrada")
     return persons_crud.create_person(db,person=person)
-'''
-@router.post('/usuarios', response_model=schema.Usuario)
-def crear_usuarios(entrada:schema.Usuario, db:Session= Depends(get_db)):
-    usuario = modelos.Usuario(username = entrada.username,nombre = entrada.nombre, rol= entrada.rol, estado=entrada.estado )
-    db.add(usuario)
-    db.commit()
-    db.refresh(usuario)
-    return usuario
 
-@router.put('/usuarios/{usuario_id}',response_model=schema.Usuario )
-def actualizar_usuario(usuario_id:int,entrada:schema.UsuarioUpdate, db:Session= Depends(get_db)):
-    usuario = db.query(modelos.Usuario).filter_by(id=usuario_id).first()
-    usuario.nombre = entrada.nombre
-    db.commit()
-    db.refresh(usuario)
-    return usuario
-
-'''
 
 
 
