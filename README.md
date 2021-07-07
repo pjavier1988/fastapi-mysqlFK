@@ -1,1 +1,1 @@
-# gearth_autenticacion
+# FastAPI con modelos relacionales en MySQL
