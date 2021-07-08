@@ -11,12 +11,12 @@ Cada API tiene su respectivo modelo de entrada y respuesta, utilizando Pydantic 
 **1. Clona la aplicación**
 
 ```bash
-git clone https://github.com/coma123/Spring-Boot-Blog-REST-API.git
+git clone https://github.com/pjavier1988/fastapi-mysqlFK.git
 ```
 
 **2. Crea una base de datos Mysql**
 ```bash
-create database blogapi
+create database fastapi_relationship
 ```
 
 **3. Modifica los datos de configuración**
